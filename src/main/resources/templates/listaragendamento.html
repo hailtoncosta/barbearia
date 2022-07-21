@@ -1,0 +1,70 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.w3.org/1999/xhtml"
+	layout:decorate="~{fragments/layout}">
+
+<form action="" method="post" layout:fragment="corpocliente">
+	<div class="container">
+		<br><br><br><br>
+		<div>
+			<table class="table table-success table-striped">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Cliente</th>
+						<th scope="col">Serviço</th>
+						<th scope="col">Valor</th>
+						<th scope="col">Hora</th>
+						<th scope="col">Observação</th>
+						<th scope="col">Editar</th>
+						<th scope="col">Excluir</th>
+					</tr>
+				</thead>
+
+				<tr th:each="agendamento : ${listaragendamento}" style="font-size: 10pt;">
+					<td th:text="${agendamento.id}"></td>
+					<td th:text="${agendamento.cliente.nome}"></td>
+					<td th:text="${agendamento.servico.descricao}"></td>
+					<td th:text="${#strings.replace(#numbers.formatCurrency(agendamento.valor), '.00000', '')}"></td>
+					<td th:text="${agendamento.hora}"></td>
+					<td th:text="${agendamento.observacao}"></td>
+					<td><a
+						th:href="@{/cadgendamento/{id}(id=${agendamento.id})}" 
+						title="Editar">
+						<i class="material-icons left" style="color: blue;">edit</i></a></td>
+					<td><a
+						th:href="@{/excluirAgendamento/{id}(id=${agendamento.id})}"
+						title="Excluir" onclick="return confirmarExclusaoAgendamento()? true : false;">
+							<i class="material-icons left" style="color: blue;">delete</i>
+						</a>
+					</td>
+				</tr>
+			</table>
+
+			<div class="row" style="margin-top: 30px;">
+			<!-- 
+				<center>
+					<span th:if="${listarcliente.hasPrevious()}"> <a
+						th:href="@{/clientespag(page=${listarcliente.number-1}, size=${listarcliente.size})}">Anterior</a>
+					</span>
+
+					<th:block
+						th:each="i : ${#numbers.sequence(0, listarcliente.totalPages - 1)}">
+						<a
+							th:href="@{/clientespag(page=${i}, size=${listarcliente.size})}">[[
+							${i} + 1 ]]</a>
+					</th:block>
+
+					<span th:if="${listarcliente.hasNext()}"> <a
+						th:href="@{/clientespag(page=${listarcliente.number+1}, size=${listarcliente.size})}">Próximo</a>
+					</span>
+				</center>
+				 -->
+			</div>
+
+		</div>
+	</div>
+	
+	
+</form>
+
+</html>

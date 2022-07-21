@@ -1,0 +1,338 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+  <head>
+    <title>Sistema de Barbearia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> 
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">     
+	<link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style type="text/css">
+    	.titulocliente {
+    		text-align: center;
+    		background-color: white;
+    	}
+    	
+    </style>
+   
+  </head>
+  <body>
+    
+    <header role="banner">
+     
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="/index">Barber Shop</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="hairstyle.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cliente</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="/cadcliente">Cadastrar</a>
+                  <a class="dropdown-item" href="hairstyle.html">Regular Hair Cut</a>
+                  <a class="dropdown-item" href="hairstyle.html">Shampoo + Cut</a>
+                  <a class="dropdown-item" href="hairstyle.html">Beard Trim with Razor</a>
+                  <a class="dropdown-item" href="hairstyle.html">Hair Color</a>
+                </div>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="hairstyle.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuário</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="/cadusuario">Cadastrar</a>
+                  <a class="dropdown-item" href="hairstyle.html">Regular Hair Cut</a>
+                  <a class="dropdown-item" href="hairstyle.html">Shampoo + Cut</a>
+                  <a class="dropdown-item" href="hairstyle.html">Beard Trim with Razor</a>
+                  <a class="dropdown-item" href="hairstyle.html">Hair Color</a>
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="hairstyle.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviço</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="/cadservico">Cadastrar</a>
+                  <a class="dropdown-item" href="hairstyle.html">Regular Hair Cut</a>
+                  <a class="dropdown-item" href="hairstyle.html">Shampoo + Cut</a>
+                  <a class="dropdown-item" href="hairstyle.html">Beard Trim with Razor</a>
+                  <a class="dropdown-item" href="hairstyle.html">Hair Color</a>
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="hairstyle.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agendamento</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="/cadagendamento">Cadastrar</a>
+                  <a class="dropdown-item" href="/listaragendamento">Listar Agendamentos</a>
+                  <a class="dropdown-item" href="hairstyle.html">Shampoo + Cut</a>
+                  <a class="dropdown-item" href="hairstyle.html">Beard Trim with Razor</a>
+                  <a class="dropdown-item" href="hairstyle.html">Hair Color</a>
+                </div>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Sair</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
+
+    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/big_image_1.jpg);">
+      <div class="container">
+      
+            <form action="" layout:fragment="corpocliente">
+    		</form>
+    		
+        <div class="row align-items-center site-hero-inner justify-content-center">
+          <div class="col-md-8 text-center">
+
+            <div class="mb-5 element-animate">
+            
+    		
+	            <form action="" layout:fragment="corpo">
+    					       
+    			</form>
+            </div>
+            
+    		
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- loader -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+
+    <script src="js/main.js"></script>
+    
+    <script type="text/javascript">
+    	//VALIDAÇÃO DA TABELA DE AGENDAMENTOS//
+    	function validarCamposAgendamento() {
+    		var valor = document.getElementById('valor');
+    		var hora = document.getElementById('hora');
+    		
+    		if (valor.value ==='') {
+    			document.getElementById('error-valor').innerHTML = "Informe o valor!";
+    			valor.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-valor').innerHTML = "";
+    		}
+    		
+    		if (hora.value === '') {
+    			document.getElementById('error-hora').innerHTML = "Informa a hora!";
+    			hora.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-hora').innerHTML = "";
+    		}
+    		
+    		alert('Agendamento salvo com sucesso!')
+    		
+    		return true;
+    	}
+    	
+    	//VALIDAÇÃO DA TABELA DE CLIENTES//
+    	function validarCamposCliente() {
+    		var nome = document.getElementById('nome');
+    		var dataNascimento = document.getElementById('dataNascimento');
+    		var telefone = document.getElementById('telefone');
+    		var email = document.getElementById('email');
+    		var rg = document.getElementById('rg');
+    		var endereco = document.getElementById('endereco');
+    		var cep = document.getElementById('cep');
+    		
+    		if (nome.value === '') {
+    			document.getElementById('error-nome').innerHTML = "Informe o nome do cliente!";
+    			nome.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-nome').innerHTML = "";
+    		}
+    		
+    		if (dataNascimento.value === '') {
+    			document.getElementById('error-data').innerHTML = "Informe a data de nascimento do cliente!";
+    			dataNascimento.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-data').innerHTML = "";    		
+    		}
+    		
+    		if (telefone.value === '') {
+    			document.getElementById('error-telefone').innerHTML = "Informe o telefone do cliente!";
+    			telefone.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-telefone').innerHTML = "";
+    		}
+    		
+    		if (email.value === '') {
+    			document.getElementById('error-email').innerHTML = "Informe o email do cliente!";
+    			email.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-email').innerHTML = "";
+    		}
+    		
+    		if (rg.value === '') {
+    			document.getElementById('error-rg').innerHTML = "Informe o rg do cliente!";
+    			rg.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-rg').innerHTML = "";
+    		}
+    		
+    		if (endereco.value === '') {
+    			document.getElementById('error-endereco').innerHTML = "Informe o endereço do cliente!";
+    			endereco.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-endereco').innerHTML = "";
+    		}
+    		
+    		if (cep.value === '') {
+    			document.getElementById('error-cep').innerHTML = "Informe o CEP do cliente!";
+    			cep.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-cep').innerHTML = "";
+    		}
+    		
+    		alert('Dados do cliente salvos com sucesso!');
+    		return true;
+    	}
+    	
+    	//VALIDAÇÃO DA TABELA DE USUÁRIOS//
+    	function validarCamposUsuario() {
+    		var nome = document.getElementById('nome');
+    		var senha = document.getElementById('senha');
+    		var dataNascimento = document.getElementById('dataNascimento');
+    		var telefone = document.getElementById('telefone');
+    		var email = document.getElementById('email');
+    		var rg = document.getElementById('rg');
+    		
+    		if (nome.value === '') {
+    			document.getElementById('error-nome').innerHTML = "Informe o nome do usuário!";
+    			nome.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-nome').innerHTML = "";
+    		}
+    		
+    		if (senha.value === '') {
+    			document.getElementById('error-senha').innerHTML = "Informe a senha do usuário!";
+    			senha.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-senha').innerHTML = "";
+    		}
+    		
+    		if (dataNascimento.value === '') {
+    			document.getElementById('error-data').innerHTML = "Informe a data de nascimento do usuário!";
+    			dataNascimento.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-data').innerHTML = "";
+    		}
+    		
+    		if (telefone.value === '') {
+    			document.getElementById('error-telefone').innerHTML = "Informe o telefone do usuário!";
+    			telefone.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-telefone').innerHTML = "";
+    		}
+    		
+    		if (email.value === '') {
+    			document.getElementById('error-email').innerHTML = "Informe o email do usuário!";
+    			email.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-email').innerHTML = "";
+    		}
+    		
+    		if (rg.value === '') {
+    			document.getElementById('error-rg').innerHTML = "Informe o rg do usuário!";
+    			rg.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-rg').innerHTML = "";
+    		}
+    		
+    		alert('Dados do usuário salvos com sucesso!')
+    		
+    		return true;
+    	}
+    	
+    	//VALIDAÇÃO DA TABELA DE SERVIÇO//
+    	function validarCamposServico() {
+    		var descricao = document.getElementById('descricao');
+    		var valor = document.getElementById('valor');
+    		
+    		if (descricao.value === '') {
+    			document.getElementById('error-descricao').innerHTML = 'Informe a descrição do serviço!';
+    			descricao.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-descricao').innerHTML = '';
+    		}
+    		
+    		if (valor.value === '') {
+    			document.getElementById('error-valor').innerHTML = 'Informe o valor do serviço!';
+    			valor.focus();
+    			return false;
+    		} else {
+    			document.getElementById('error-valor').innerHTML = '';
+    		}
+    		
+    		alert('Dados da descrição salvos com sucesso!')
+    		
+    		return true;
+    	}
+    	
+    	function confirmarExclusaoAgendamento() {
+    		if (confirm('Deseja excluir o agendamento?')) {
+    			return true;
+    		} else {
+    			return false;
+    		}
+    	}
+    
+    </script>
+    
+  </body>
+</html>
