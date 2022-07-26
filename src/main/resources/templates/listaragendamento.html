@@ -6,7 +6,7 @@
 	<div class="container">
 		<br><br><br><br>
 		<div>
-			<table class="table table-success table-striped">
+			<table class="table table-success table-striped" style="color: black;">
 				<thead>
 					<tr>
 						<th scope="col">#</th>
@@ -20,7 +20,7 @@
 					</tr>
 				</thead>
 
-				<tr th:each="agendamento : ${listaragendamento}" style="font-size: 10pt;">
+				<tr th:each="agendamento : ${listaragendamento}" style="font-size: 10pt; color: black;">
 					<td th:text="${agendamento.id}"></td>
 					<td th:text="${agendamento.cliente.nome}"></td>
 					<td th:text="${agendamento.servico.descricao}"></td>
@@ -39,29 +39,27 @@
 					</td>
 				</tr>
 			</table>
+		</div>
 
 			<div class="row" style="margin-top: 30px;">
-			<!-- 
 				<center>
-					<span th:if="${listarcliente.hasPrevious()}"> <a
-						th:href="@{/clientespag(page=${listarcliente.number-1}, size=${listarcliente.size})}">Anterior</a>
+					<span th:if="${listaragendamento.hasPrevious()}"> <a
+						th:href="@{/agendamentopag(page=${listaragendamento.number-1}, size=${listaragendamento.size})}">Anterior</a>
 					</span>
 
 					<th:block
-						th:each="i : ${#numbers.sequence(0, listarcliente.totalPages - 1)}">
+						th:each="i : ${#numbers.sequence(0, listaragendamento.totalPages - 1)}">
 						<a
-							th:href="@{/clientespag(page=${i}, size=${listarcliente.size})}">[[
+							th:href="@{/agendamentopag(page=${i}, size=${listaragendamento.size})}">[[
 							${i} + 1 ]]</a>
 					</th:block>
 
-					<span th:if="${listarcliente.hasNext()}"> <a
-						th:href="@{/clientespag(page=${listarcliente.number+1}, size=${listarcliente.size})}">Próximo</a>
+					<span th:if="${listaragendamento.hasNext()}"> <a
+						th:href="@{/agendamentopag(page=${listaragendamento.number+1}, size=${listaragendamento.size})}">Próximo</a>
 					</span>
 				</center>
-				 -->
 			</div>
 
-		</div>
 	</div>
 	
 	
