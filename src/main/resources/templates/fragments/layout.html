@@ -48,10 +48,7 @@
                 <a class="nav-link dropdown-toggle" href="hairstyle.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cliente</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
                   <a class="dropdown-item" href="/cadcliente">Cadastrar</a>
-                  <a class="dropdown-item" href="hairstyle.html">Regular Hair Cut</a>
-                  <a class="dropdown-item" href="hairstyle.html">Shampoo + Cut</a>
-                  <a class="dropdown-item" href="hairstyle.html">Beard Trim with Razor</a>
-                  <a class="dropdown-item" href="hairstyle.html">Hair Color</a>
+                  <a class="dropdown-item" href="/listarcliente">Listar cliente</a>
                 </div>
               </li>
               
@@ -82,9 +79,6 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
                   <a class="dropdown-item" href="/cadagendamento">Cadastrar</a>
                   <a class="dropdown-item" href="/listaragendamento">Listar Agendamentos</a>
-                  <a class="dropdown-item" href="hairstyle.html">Shampoo + Cut</a>
-                  <a class="dropdown-item" href="hairstyle.html">Beard Trim with Razor</a>
-                  <a class="dropdown-item" href="hairstyle.html">Hair Color</a>
                 </div>
               </li>
               
@@ -326,6 +320,14 @@
     	
     	function confirmarExclusaoAgendamento() {
     		if (confirm('Deseja excluir o agendamento?')) {
+    			return true;
+    		} else {
+    			return false;
+    		}
+    	}
+    	
+    	function confirmarExclusaoCliente() {
+    		if (confirm('Deseja excluir o cliente?')) {
     			return true;
     		} else {
     			return false;
