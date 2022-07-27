@@ -2,7 +2,8 @@
 	  xmlns:layout="http://www.w3.org/1999/xhtml"
 	  layout:decorate="~{fragments/layout}">
 
-<form action="/salvarusuario" method="post" layout:fragment="corpocliente" onsubmit="return validarCamposUsuario()? true : false">
+<form action="/salvarusuario" method="post" layout:fragment="corpocliente" onsubmit="return validarCamposUsuario()? true : false"
+	th:object = "${objusuario}">
 		<br><br><br><br>
 	
 	<div class="titulocliente">
@@ -12,22 +13,22 @@
 	<div class="row">
 		<div class="form-group col-md-6">
 			<label for="nome">Nome</label>
-			<input type="text" class="form-control" id="nome" name="nome">
+			<input type="text" class="form-control" id="nome" name="nome" th:field="*{nome}">
 			<small id="error-nome" style="color: red;"></small>
 		</div>
 		
 		<div class="form-group col-md-6">
 			<label for="senha">Senha</label>
-			<input type="password" class="form-control" id="senha" name="senha">
+			<input type="password" class="form-control" id="senha" name="senha" th:field="*{senha}">
 			<small id="error-senha" style="color: red;"></small>
 		</div>
 	</div>
 	
 	<div class="row">
 		<div class="form-group col-md-6">
-			<label for="acesso">Nível de Acesso</label>
-			<select class="custom-select custom-select-lg mb-3" style="height: 40px;" id="acesso" name="acesso">
-			  <option selected>Selecione o acesso</option>
+			<label for="acesso">Selecione o nível de acesso</label>
+			<select class="custom-select custom-select-lg mb-3" style="height: 40px;" id="acesso" name="acesso"
+				th:field="*{acesso}">
 			  <option value="ADMINISTRADOR">Administrador</option>
 			  <option value="USUARIO">Usuário</option>
 			  <option value="CLIENTE">Cliente</option>
@@ -35,9 +36,9 @@
 		</div>
 		
 		<div class="form-group col-md-6">
-			<label for="sexo">Sexo</label>
-			<select class="custom-select custom-select-lg mb-3" style="height: 40px;" id="sexo" name="sexo">
-			  <option selected>Selecione o sexo</option>
+			<label for="sexo">Selecione o sexo</label>
+			<select class="custom-select custom-select-lg mb-3" style="height: 40px;" id="sexo" name="sexo"
+				th:field="*{sexo}">
 			  <option value="MASCULINO">Masculino</option>
 			  <option value="FEMININO">Feminino</option>
 			</select>
@@ -47,13 +48,15 @@
 	<div class="row">
 		<div class="form-group col-md-6">
 			<label for="dataNascimento">Data de Nascimento</label>
-			<input type="text" class="form-control" id="dataNascimento" name="dataNascimento" onkeypress="$(this).mask('00/00/0000')">
+			<input type="text" class="form-control" id="dataNascimento" name="dataNascimento" onkeypress="$(this).mask('00/00/0000')"
+				th:field="*{dataNascimento}">
 			<small id="error-data" style="color: red;"></small>
 		</div>
 		
 		<div class="form-group col-md-6">
 			<label for="telefone">Telefone</label>
-			<input type="text" class="form-control" id="telefone" name="telefone" onkeypress="$(this).mask('(00) 00000-0000')">
+			<input type="text" class="form-control" id="telefone" name="telefone" onkeypress="$(this).mask('(00) 00000-0000')"
+				th:field="*{telefone}">
 			<small id="error-telefone" style="color: red;"></small>
 		</div>
 	</div>
@@ -61,18 +64,18 @@
 	<div class="row">
 		<div class="form-group col-md-6">
 			<label for="email">Email</label>
-			<input type="text" class="form-control" id="email" name="email">
+			<input type="text" class="form-control" id="email" name="email" th:field="*{email}">
 			<small id="error-email" style="color: red;"></small>
 		</div>
 		
 		<div class="form-group col-md-6">
 			<label for="rg">RG</label>
-			<input type="text" class="form-control" id="rg" name="rg">
+			<input type="text" class="form-control" id="rg" name="rg" th:field="*{rg}">
 			<small id="error-rg" style="color: red;"></small>
 		</div>
 	</div>
 	
-	<input type="hidden" id="id" name="id">
+	<input type="hidden" id="id" name="id" th:field="*{id}">
 	
 	<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
 </form>

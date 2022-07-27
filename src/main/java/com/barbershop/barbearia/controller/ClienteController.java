@@ -57,7 +57,7 @@ public class ClienteController {
 		return new ModelAndView("redirect:/listarcliente");
 	}
 	
-	@GetMapping("clientepag")
+	@GetMapping("/clientepag")
 	public ModelAndView carregarClientePorPaginacao(@PageableDefault(size = 6) Pageable pageable, ModelAndView modelAndView) {
 		Page<Cliente> pageCliente = clienteRepository.findAll(pageable);
 		modelAndView.addObject("listarcliente", pageCliente);

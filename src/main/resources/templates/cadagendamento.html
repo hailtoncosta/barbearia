@@ -13,14 +13,14 @@
 	<div class="row">
 		
 		<div class="form-group col-md-6">
-			<label for="cliente">Cliente</label>
+			<label for="cliente">Selecione o cliente</label>
 			<select class="custom-select custom-select-lg mb-3" style="height: 40px;" th:field="*{cliente}">
 			  <option th:each = "lista : ${listaclientes}" th:value = "${lista.id}" th:text = "${lista.nome}"></option>
 			</select>
 		</div>
 		
 		<div class="form-group col-md-6">
-			<label for="servico">Serviço</label>
+			<label for="servico">Selecione o serviço</label>
 			<select class="custom-select custom-select-lg mb-3" style="height: 40px;" th:field="*{servico}">
 			  <option th:each = "servico : ${listaservicos}" th:value = "${servico.id}" th:text = "${servico.descricao}"></option>
 			</select>
