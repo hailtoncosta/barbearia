@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.min.js" rel="stylesheet"> 
 	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">     
 	<link rel="stylesheet" href="../css/animate.css">
@@ -48,7 +49,7 @@
                 <a class="nav-link dropdown-toggle" href="hairstyle.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cliente</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
                   <a class="dropdown-item" href="/cadcliente">Cadastrar</a>
-                  <a class="dropdown-item" href="/listarcliente">Listar cliente</a>
+                  <a class="dropdown-item" href="/listarcliente">Listar clientes</a>
                 </div>
               </li>
               
@@ -56,7 +57,7 @@
                 <a class="nav-link dropdown-toggle" href="hairstyle.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuário</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
                   <a class="dropdown-item" href="/cadusuario">Cadastrar</a>
-                  <a class="dropdown-item" href="/listarusuario">Listar usuário</a>
+                  <a class="dropdown-item" href="/listarusuario">Listar usuários</a>
                 </div>
               </li>
 
@@ -64,10 +65,7 @@
                 <a class="nav-link dropdown-toggle" href="hairstyle.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviço</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
                   <a class="dropdown-item" href="/cadservico">Cadastrar</a>
-                  <a class="dropdown-item" href="hairstyle.html">Regular Hair Cut</a>
-                  <a class="dropdown-item" href="hairstyle.html">Shampoo + Cut</a>
-                  <a class="dropdown-item" href="hairstyle.html">Beard Trim with Razor</a>
-                  <a class="dropdown-item" href="hairstyle.html">Hair Color</a>
+                  <a class="dropdown-item" href="/listarservicos">Listar serviços</a>
                 </div>
               </li>
 
@@ -338,6 +336,15 @@
     			return false;
     		}
     	}
+    	
+    	function confirmarExclusaoServicos() {
+    		if (confirm('Deseja excluir o serviço?')) {
+    			return true;
+    		} else {
+    			return false;
+    		}
+    	}
+    	
     
     </script>
     

@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.barbershop.barbearia.model.Agendamento;
-import com.barbershop.barbearia.model.Cliente;
-import com.barbershop.barbearia.model.Servico;
 import com.barbershop.barbearia.repository.AgendamentoRepository;
 import com.barbershop.barbearia.repository.ClienteRepository;
 import com.barbershop.barbearia.repository.ServicoRepository;
@@ -33,12 +31,14 @@ public class AgendamentoController {
 	@Autowired
 	private ServicoRepository servicoRepository;
 	
+	
 	@GetMapping("/cadagendamento")
 	public ModelAndView iniciarAgendamento() {
 		ModelAndView modelAndView = new ModelAndView("cadagendamento");
 		modelAndView.addObject("objagendamento", new Agendamento());
 		modelAndView.addObject("listaclientes", clienteRepository.findAll());
 		modelAndView.addObject("listaservicos", servicoRepository.findAll());
+		
 		return modelAndView;
 	}
 	

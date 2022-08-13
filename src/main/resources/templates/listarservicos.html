@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.w3.org/1999/xhtml"
+	layout:decorate="~{fragments/layout}">
+
+<form action="" method="post" layout:fragment="corpocliente">
+	<div class="container">
+		<br><br><br><br>
+		<div>
+			<table class="table table-success table-striped" style="color: black;">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Descricao</th>
+						<th scope="col">Editar</th>
+						<th scope="col">Excluir</th>
+					</tr>
+				</thead>
+
+				<tr th:each="servicos : ${listarservicos}" style="font-size: 10pt; color: black;">
+					<td th:text="${servicos.id}"></td>
+					<td th:text="${servicos.descricao}"></td>
+					<td><a
+						th:href="@{/editarservicos/{id}(id=${servicos.id})}" 
+						title="Editar">
+						<i class="material-icons left" style="color: blue;">edit</i></a></td>
+					<td><a
+						th:href="@{/excluirservicos/{id}(id=${servicos.id})}"
+						title="Excluir" onclick="return confirmarExclusaoServicos()? true : false;">
+							<i class="material-icons left" style="color: blue;">delete</i>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		 <!-- 
+			<div class="row" style="margin-top: 30px;">
+				<center>
+					<span th:if="${listarusuario.hasPrevious()}"> <a
+						th:href="@{/usuariopag(page=${listarusuario.number-1}, size=${listarusuario.size})}">Anterior</a>
+					</span>
+
+					<th:block
+						th:each="i : ${#numbers.sequence(0, listarusuario.totalPages - 1)}">
+						<a
+							th:href="@{/usuariopag(page=${i}, size=${listarusuario.size})}">[[
+							${i} + 1 ]]</a>
+					</th:block>
+
+					<span th:if="${listarusuario.hasNext()}"> <a
+						th:href="@{/usuariopag(page=${listarusuario.number+1}, size=${listarusuario.size})}">Próximo</a>
+					</span>
+				</center>
+			</div>
+		   -->
+	</div>
+	
+	
+</form>
+
+</html>
