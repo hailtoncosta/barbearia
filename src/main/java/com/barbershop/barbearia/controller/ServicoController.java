@@ -3,6 +3,11 @@ package com.barbershop.barbearia.controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,7 +39,7 @@ public class ServicoController {
 	@GetMapping("/listarservicos")
 	public ModelAndView listarservicos() {
 		ModelAndView modelAndView = new ModelAndView("listarservicos");
-		modelAndView.addObject("listarservicos", servicoRepository.findAll());
+		modelAndView.addObject("listarservicos", servicoRepository.findAll(PageRequest.of(0, 6, Sort.by("descricao"))));
 		return modelAndView;
 	}
 	
@@ -51,5 +56,14 @@ public class ServicoController {
 	public ModelAndView excluirservicos(@PathVariable("id") Long id) {
 		servicoRepository.deleteById(id);
 		return new ModelAndView("redirect:/listarservicos");
+	}
+	
+	@GetMapping("/servicopag")
+	public ModelAndView carregarServicoPorPaginacao(@PageableDefault(size = 0) Pageable pageable, ModelAndView modelAndView) {
+		Page<Servico> PageServico = servicoRepository.findAll(pageable);
+		modelAndView.addObject("listarservicos", PageServico);
+		modelAndView.addObject("objservico", new Servico());
+		modelAndView.setViewName("listarservicos");
+		return modelAndView;
 	}
 }
