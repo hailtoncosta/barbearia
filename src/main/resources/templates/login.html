@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+	body {
+		background: white;
+	}
+	
+	form {
+		width: 400px;
+		height: 500px;
+		margin: auto;
+		padding-top: 6%;
+	}
+	
+	.card {
+		box-shadow: 1px 1px 5px #ccc;
+		background: -webkit-gradient(linear, left top, left bottom, from(#B5B5B5), to(#E8E8E8)); 
+		padding: 30px;
+		border-radius: 10px;
+	}
+
+	.card label {
+		color: #FF0000;
+		display: block;
+		padding-top: 5px;
+	}
+
+	.card input {
+		border-radius: 10px;
+		outline: 0;
+		width: 100%;
+		height: 25px;
+		padding: 5px;
+	}
+
+	button {
+		background: green;
+		width: 103%;
+		border-radius: 10px;
+		padding: 10px;
+		color: white;
+		font-size: 15pt;
+		border: 0px;
+		outline: 0;
+		margin-top: 5%;
+	}
+
+	.card-title {
+		text-align: center;
+		color: black;
+		font-size: 20pt;
+	}
+</style>
+
+<title>Tela de Login</title>
+
+</head>
+<body>
+<form id="login" th:action="@{/login}" method="post">
+	<div class="card">
+		<div class="card-title">
+			<h2>Tela de Login</h2>
+		</div>
+		
+		<div>
+			<div>
+				<label>Login</label>
+				<input type="text" id="username" name="username">
+			</div>
+			
+			<div>
+				<label>Senha</label>
+				<input type="password" id="password" name="password">
+			</div>
+		</div> 
+		
+		<div class="btn">
+			<a href="principal">
+				<button type="submit">Entrar</button>
+			</a>
+		</div>
+	</div>
+</form>
+</body>
+</html>
