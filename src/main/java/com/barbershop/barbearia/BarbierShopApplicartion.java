@@ -13,10 +13,4 @@ public class BarbierShopApplicartion {
 		return modelAndView;
 	}
 	
-	@GetMapping("/login")
-	public ModelAndView telaLogin() {
-		ModelAndView modelAndView = new ModelAndView("login");
-		return modelAndView;
-	}
-	
 }

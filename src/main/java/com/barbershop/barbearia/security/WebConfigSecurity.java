@@ -6,13 +6,14 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 @Configuration
-@EnableWebSecurity
+@EnableWebMvc
 public class WebConfigSecurity extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
@@ -23,15 +24,15 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter {
 		http.csrf()
 		.disable()
 		.authorizeRequests()
-		.antMatchers(HttpMethod.GET, "/")
-		.permitAll()
-		.anyRequest()
-		.authenticated()
-		.and()
-		.formLogin()
-		.permitAll()
-		.and()
-		.logout()
+			.antMatchers(HttpMethod.GET, "/").permitAll()
+			.antMatchers("/resources/**").permitAll()
+			.and()
+		.formLogin().permitAll()
+			.loginPage("/login")
+			.defaultSuccessUrl("/index")
+			.failureUrl("/login?error=true")
+			.and()
+		.logout().logoutSuccessUrl("/login")
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 	}
 
@@ -43,6 +44,14 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("../resources/**");
+		web.ignoring().antMatchers("/resources/**")
+		.antMatchers(HttpMethod.GET, "/resources/**", "static/**","/");
+		
 	}
+	
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry
+			.addResourceHandler("/res/**")
+			.addResourceLocations("/resources/static/");
+	  }
 }
