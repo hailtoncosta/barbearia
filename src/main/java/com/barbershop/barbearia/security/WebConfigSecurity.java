@@ -42,16 +42,9 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter {
 		.passwordEncoder(new BCryptPasswordEncoder());
 	}
 	
-	@Override
+	@Override  // ignora url especificas
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resources/**")
-		.antMatchers(HttpMethod.GET, "/resources/**", "static/**","/");
-		
+		web.ignoring().antMatchers("/resources/**", "/static/**");
 	}
-	
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry
-			.addResourceHandler("/res/**")
-			.addResourceLocations("/resources/static/");
-	  }
+
 }

@@ -13,4 +13,10 @@ public class BarbierShopApplicartion {
 		return modelAndView;
 	}
 	
+	@GetMapping("/login")
+	public ModelAndView inicioLogin() {
+		ModelAndView modelAndView = new ModelAndView("login");
+		return modelAndView;
+	}
+	
 }

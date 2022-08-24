@@ -11,10 +11,18 @@
 	</div>
 	
 	<div class="row">
-		<div class="form-group col-md-6">
+		<div class="form-group col-md-12">
 			<label for="nome">Nome</label>
 			<input type="text" class="form-control" id="nome" name="nome" th:field="*{nome}">
 			<small id="error-nome" style="color: red;"></small>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="form-group col-md-6">
+			<label for="email">Email</label>
+			<input type="text" class="form-control" id="email" name="email" th:field="*{email}">
+			<small id="error-email" style="color: red;"></small>
 		</div>
 		
 		<div class="form-group col-md-6">
@@ -46,29 +54,21 @@
 	</div>
 	
 	<div class="row">
-		<div class="form-group col-md-6">
+		<div class="form-group col-md-4">
 			<label for="dataNascimento">Data de Nascimento</label>
 			<input type="text" class="form-control" id="dataNascimento" name="dataNascimento" onkeypress="$(this).mask('00/00/0000')"
 				th:field="*{dataNascimento}">
 			<small id="error-data" style="color: red;"></small>
 		</div>
 		
-		<div class="form-group col-md-6">
+		<div class="form-group col-md-4">
 			<label for="telefone">Telefone</label>
 			<input type="text" class="form-control" id="telefone" name="telefone" onkeypress="$(this).mask('(00) 00000-0000')"
 				th:field="*{telefone}">
 			<small id="error-telefone" style="color: red;"></small>
 		</div>
-	</div>
-	
-	<div class="row">
-		<div class="form-group col-md-6">
-			<label for="email">Email</label>
-			<input type="text" class="form-control" id="email" name="email" th:field="*{email}">
-			<small id="error-email" style="color: red;"></small>
-		</div>
 		
-		<div class="form-group col-md-6">
+		<div class="form-group col-md-4">
 			<label for="rg">RG</label>
 			<input type="text" class="form-control" id="rg" name="rg" th:field="*{rg}">
 			<small id="error-rg" style="color: red;"></small>
@@ -76,8 +76,10 @@
 	</div>
 	
 	<input type="hidden" id="id" name="id" th:field="*{id}">
-	
+		
 	<button type="submit" class="btn btn-primary btn-lg btn-block">Salvar</button>
+		
+	
 </form>
 
 </html>
