@@ -1,5 +1,9 @@
 package com.barbershop.barbearia.repository;
 
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -13,5 +17,20 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	
 	@Query("select u from Usuario u where u.email = ?1")
 	Usuario findUserByLogin(String email);
+	
+	default Page<Usuario> findUsuarioByName(String nome, Pageable pageable) {
+		
+		Usuario usuario = new Usuario();
+		usuario.setNome(nome);
+		
+		ExampleMatcher exampleMatcher = ExampleMatcher.matchingAny()
+				.withMatcher("nome", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase());
+		
+		Example<Usuario> example = Example.of(usuario, exampleMatcher);
+		
+		Page<Usuario> usuarios = findAll(example, pageable);
+		
+		return usuarios;
+	}
 	
 }

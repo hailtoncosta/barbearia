@@ -2,12 +2,16 @@
 	xmlns:layout="http://www.w3.org/1999/xhtml"
 	layout:decorate="~{fragments/layout}">
 
-<form action="" method="post" layout:fragment="corpocliente">
+<form id="pesquisarusuario" action="pesquisarusuario" method="post" layout:fragment="corpocliente">
 	<div class="container">
 		<br><br><br><br>
 		<div>
 			<div class="listaclientes" style="background: white;">
-				<h3>Lista de Usuários</h3>
+				<h3>Lista de Usuários
+					<label style="font-size: 10pt; margin-right: 38%;"></label>
+					<input style="font-size: 18pt;" type="text" id="nomepesquisa" name="nomepesquisa" th:value = "${nomepesquisa}">
+					<button style="font-size: 18pt;" onclick="pesquisar();">Pesquisar</button>
+				</h3>
 			</div>
 			<table class="table table-success table-striped" style="color: black;">
 				<thead>
