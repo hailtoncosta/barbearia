@@ -14,10 +14,10 @@ public class BarbeariaApplication implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BarbeariaApplication.class, args);
-		
+		/*
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String result = encoder.encode("123");
-		System.out.println(result);
+		System.out.println(result);*/
 	}
 	
 	@Override

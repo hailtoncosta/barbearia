@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.barbershop.barbearia.model.Cliente;
@@ -63,6 +64,22 @@ public class ClienteController {
 		modelAndView.addObject("listarcliente", pageCliente);
 		modelAndView.addObject("objcliente", new Cliente());
 		modelAndView.setViewName("listarcliente");
+		return modelAndView;
+	}
+	
+	@PostMapping("/pesquisarcliente")
+	public ModelAndView pesquisarCliente(@RequestParam("nomepesquisa") String nomepesquisa, 
+			@PageableDefault(size=6, sort= {"nome"}) Pageable pageable) {
+		
+		Page<Cliente> clientes = null;
+		
+		clientes = clienteRepository.findClienteByNamePage(nomepesquisa, pageable);
+		
+		ModelAndView modelAndView = new ModelAndView("listarcliente");
+		modelAndView.addObject("listarcliente", clientes);
+		modelAndView.addObject("objcliente", new Cliente());
+		modelAndView.addObject("nomepesquisa", nomepesquisa);
+		
 		return modelAndView;
 	}
 }
